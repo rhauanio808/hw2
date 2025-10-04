@@ -140,7 +140,7 @@ void MyDataStore::buyCart(const std::string& username) {
 
     for(size_t i = 0; i < cart.size(); i++) {
         Product* p = cart[i];
-        if(p->getQty() > 0 && u->getTotal() >= p->getPrice()) {
+        if(p->getQty() > 0 && u->getBalance() >= p->getPrice()) {
             p->subtractQty(1);
             u->deductAmount(p->getPrice());
         } else {
